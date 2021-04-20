@@ -268,6 +268,33 @@ let controller = {
                 return res.sendFile(path.resolve(path_file))
             }
         })
+    },
+    search : (req, res)=>{
+        let searchString=req.params.search;
+        Article.find({
+            "$or":[{
+                "title":{"$regex":searchString, "$options":"i"},
+                "content":{"$regex":searchString, "$options":"i"}
+            }]})
+            .sort([['date','descending']])
+            .exec((err,articles)=>{
+                if (!articles){
+                    return res.status(500).send({
+                        status:'error',
+                        mensaje:'error peticion '
+                    })
+                }
+                if (err) {
+                    return res.status(404).send({
+                        status:'error',
+                        mensaje:'no hay articulos acordes a tu busqueda'
+                    })
+                }
+                return res.status(200).send({
+                    status:'success',
+                    articulo: articles
+                })
+            })
     }
     
     
