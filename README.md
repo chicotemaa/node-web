@@ -25,10 +25,15 @@ Luego de descargar el repositorio e instalar las dependencias de node
 se debe ejecuptar desde consola el comando npm start para que inicie el servidor 
 ## Frameworks y librerias
 NODE v12.22.1
+
 body-parser: 1.19.0
+
 connect-multiparty: 2.2.0
+
 express: 4.17.1
+
 mongoose: 5.12.3
+
 validator: 13.5.2
 
 Give a ⭐️ if this project helped you!
