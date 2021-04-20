@@ -273,9 +273,9 @@ let controller = {
         let searchString=req.params.search;
         Article.find({
             "$or":[{
-                "title":{"$regex":searchString, "$options":"i"},
-                "content":{"$regex":searchString, "$options":"i"}
-            }]})
+                "title":{"$regex":searchString, "$options":"i"}},
+               { "content":{"$regex":searchString, "$options":"i"}}
+            ]})
             .sort([['date','descending']])
             .exec((err,articles)=>{
                 if (!articles){
