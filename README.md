@@ -22,6 +22,9 @@
 
 ## Show your support
 ## Frameworks y librerias
+NODE v12.22.1
+
+
 Give a ⭐️ if this project helped you!
 
 ***
